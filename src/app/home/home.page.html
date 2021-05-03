@@ -1,23 +1,39 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Home</ion-title>
   </ion-toolbar>
+</ion-header> -->
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <!-- <section></section> -->
-  <ion-button expand="block" (click)="played()">play</ion-button>
-  <ion-button expand="block" color="secondary" (click)="stat()">stat</ion-button>
-  <ion-card>
-    <ion-card-header>
-      <img
-      src="assets/image.jpeg"
-      alt="Monoploy"
-      id="Monoploy" size = 20%/>
-    </ion-card-header>
-  </ion-card>
+<!-- <ion-list>
+  <ion-list-header>
+    <ion-label id="title">
+      Monopoly
+    </ion-label>
+  </ion-list-header> -->
+  <ion-content>
+    <img
+    src="assets/monopoly.jpg"
+    id = "monoploy"
+    />
 
 
+
+
+      <section>
+        <ion-button expand="block" (click)="played()">play</ion-button>
+      </section>
+      <section>
+        <ion-button expand="block" color="secondary" (click)="stat()">stat</ion-button>
+
+      </section>
+
+
+  </ion-content>
 
   <!-- <ion-header class="ion-no-border">
     <ion-toolbar>
@@ -67,4 +83,4 @@
   <ion-label>Pay {{averagePayLose}} times/game</ion-label>
 
 </ion-item> -->
-</ion-content>
+<!-- </ion-content> -->

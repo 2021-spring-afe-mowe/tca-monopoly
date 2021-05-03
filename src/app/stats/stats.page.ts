@@ -37,7 +37,7 @@ export class StatsPage implements OnInit {
       const collect_rents_winning = total_collect_rent_winning.map(collect => collect.collectRent);
       const total_collect_rents = collect_rents_winning.reduce((acc,x) => acc+x,0);
       const averageCollectWinning = total_collect_rents/this.sharedDataService.gameResults.filter(x => x.result == "W").length;
-      return averageCollectWinning;
+      return isNaN(averageCollectWinning) ? 0 : averageCollectWinning;
     }
     get averagePayWin() {
       const total_pay_rent_winning = this.sharedDataService.gameResults.filter(x => x.result == "W");
