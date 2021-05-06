@@ -44,26 +44,21 @@ export class StatsPage implements OnInit {
       const pay_rents_winning = total_pay_rent_winning.map(pay => pay.payRent);
       const total_pay_rents = pay_rents_winning.reduce((acc,x) => acc+x,0);
       const averagePayWinning = total_pay_rents/this.sharedDataService.gameResults.filter(x => x.result == "W").length;
-      return averagePayWinning;
+      return isNaN(averagePayWinning) ? 0 : averagePayWinning;
     }
     get averageCollectLose() {
       const total_collect_rent_losing = this.sharedDataService.gameResults.filter(x => x.result == "L");
       const collect_rents_losing = total_collect_rent_losing.map(collect => collect.collectRent);
       const total_collect_rents = collect_rents_losing.reduce((acc,x) => acc+x,0);
       const averageCollectlosing = total_collect_rents/this.sharedDataService.gameResults.filter(x => x.result == "L").length;
-      return averageCollectlosing;
+      return isNaN(averageCollectlosing) ? 0: averageCollectlosing;
     }
     get averagePayLose() {
-      // if (this.sharedDataService.gameResults.filter(x => x.result == "W").length = 0) {
-      //   return 0;
-      // } else {
-
-      // }
       const total_pay_rent_losing = this.sharedDataService.gameResults.filter(x => x.result == "L");
       const pay_rents_losing = total_pay_rent_losing.map(pay => pay.payRent);
       const total_pay_rents = pay_rents_losing.reduce((acc,x) => acc+x,0);
       const averagePaylosing = total_pay_rents/this.sharedDataService.gameResults.filter(x => x.result == "L").length;
-      return averagePaylosing;
+      return isNaN(averagePaylosing) ? 0: averagePaylosing;
     }
     play() {
       this.routerSvc.navigateByUrl("/play");
